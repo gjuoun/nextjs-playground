@@ -16,6 +16,7 @@ const httpsOptions = {
 
 
 app.prepare().then(() => {
+  
   createServer(httpsOptions, (req, res) => {
     const parsedUrl = parse(req.url, true);
     handle(req, res, parsedUrl);
@@ -23,4 +24,5 @@ app.prepare().then(() => {
     if (err) throw err;
     console.log("> Server started on https://localhost:5000");
   });
+
 });
